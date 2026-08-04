@@ -57,36 +57,27 @@ The application uses **MongoDB Atlas** as the cloud database and implements **Fo
 
 # 📸 Screenshots
 
-### 🏠 Dashboard
-Displays all appointments along with their current status for quick management.
+## 🏠 Dashboard
 
-> Replace with your screenshot:
+Displays all scheduled appointments with their current status for quick monitoring.
 
-```
-/screenshots/dashboard.png
-```
+![Dashboard](./screenshots/dashboard.png)
 
 ---
 
-### 📋 Appointments List
-Shows all scheduled appointments in a clean list view with complete details.
+## 📋 Appointments List
 
-> Replace with your screenshot:
+View all appointments in a clean and organized table with complete details.
 
-```
-/screenshots/appointments-list.png
-```
+![Appointments List](./screenshots/appointments-list.png)
 
 ---
 
-### ➕ Create New Appointment
-Form for scheduling a new appointment with doctor selection, date, time, fee, and reason for visit.
+## ➕ Create New Appointment
 
-> Replace with your screenshot:
+Schedule a new appointment by selecting a doctor, date, time, consultation fee, and reason for the visit.
 
-```
-/screenshots/create-appointment.png
-```
+![Create Appointment](./screenshots/create-appointment.png)
 
 ---
 
