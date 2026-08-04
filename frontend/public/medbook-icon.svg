@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="medbookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#0d9488" />
+    </linearGradient>
+  </defs>
+  <!-- Background rounded box -->
+  <rect width="100" height="100" rx="24" fill="url(#medbookGrad)" />
+  <!-- Stethoscope Icon Paths -->
+  <path d="M32 26v16a18 18 0 0 0 36 0V26" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M50 60v12a14 14 0 0 0 28 0v-4" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="78" cy="68" r="7" fill="#ffffff" />
+  <circle cx="32" cy="26" r="4.5" fill="#ffffff" />
+  <circle cx="68" cy="26" r="4.5" fill="#ffffff" />
+</svg>
