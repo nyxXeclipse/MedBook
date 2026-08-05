@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Base API setup pointing to Express backend
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: 'https://medbook-backend-87qe.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
