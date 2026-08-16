@@ -4,54 +4,60 @@ A full-stack **Appointment Booking System** built using the **MERN Stack** (Mong
 
 The application uses **MongoDB Atlas** as the cloud database and implements **Formik** and **Yup** for robust form validation, along with **React Hot Toast** for interactive notifications.
 
+## 🌐 Live Demo
+
+🚀 **[View MedBook Live Demo](https://medbook-frontend-tesc.onrender.com/)**
+
 ---
 
 ## 🚀 Features
 
-- 👨‍⚕️ Schedule appointments with multiple doctors
-- 📅 Select appointment date and time
-- 📝 Add reason for visit (disease/symptoms)
-- 💰 Specify consultation fee
-- 📌 Manage appointment status
-- 📋 View all scheduled appointments
-- 📄 Organized appointment list view
-- ✅ Form validation using **Formik** and **Yup**
-- 🔔 Instant notifications using **React Hot Toast**
-- ☁️ MongoDB Atlas cloud database integration
-- 🌐 Responsive and intuitive user interface
-- 🔗 RESTful API architecture
+* 👨‍⚕️ Schedule appointments with multiple doctors
+* 📅 Select appointment date and time
+* 📝 Add reason for visit (disease/symptoms)
+* 💰 Specify consultation fee
+* 📌 Manage appointment status
+* 📋 View all scheduled appointments
+* 📄 Organized appointment list view
+* ✅ Form validation using **Formik** and **Yup**
+* 🔔 Instant notifications using **React Hot Toast**
+* ☁️ MongoDB Atlas cloud database integration
+* 🌐 Responsive and intuitive user interface
+* 🔗 RESTful API architecture
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- React.js
-- Vite
-- JavaScript
-- CSS
-- Formik
-- Yup
-- React Hot Toast
+
+* React.js
+* Vite
+* JavaScript
+* CSS
+* Formik
+* Yup
+* React Hot Toast
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB Atlas
-- Mongoose
-- Nodemon
+
+* Node.js
+* Express.js
+* MongoDB Atlas
+* Mongoose
+* Nodemon
 
 ---
 
 ## 🧰 Libraries & Tools
 
-| Library | Purpose |
-|---------|---------|
-| **Formik** | Form handling |
-| **Yup** | Form validation |
-| **React Hot Toast** | Toast notifications |
-| **Mongoose** | MongoDB Object Data Modeling (ODM) |
-| **Nodemon** | Automatically restarts the backend server during development |
+| Library             | Purpose                                                      |
+| ------------------- | ------------------------------------------------------------ |
+| **Formik**          | Form handling                                                |
+| **Yup**             | Form validation                                              |
+| **React Hot Toast** | Toast notifications                                          |
+| **Mongoose**        | MongoDB Object Data Modeling (ODM)                           |
+| **Nodemon**         | Automatically restarts the backend server during development |
 
 ---
 
@@ -83,7 +89,7 @@ Schedule a new appointment by selecting a doctor, date, time, consultation fee, 
 
 ## 📂 Project Structure
 
-```
+```text
 MedBook
 │
 ├── backend
@@ -158,15 +164,15 @@ The frontend will start on the Vite development server.
 
 ## 🎯 Future Enhancements
 
-- 🔐 User Authentication
-- 👨‍⚕️ Doctor Authentication
-- ✏️ Edit Appointment
-- ❌ Cancel Appointment
-- 🔄 Reschedule Appointment
-- 🔍 Search & Filter
-- 📧 Email Notifications
-- 💳 Payment Gateway Integration
-- 📊 Dashboard Analytics
+* 🔐 User Authentication
+* 👨‍⚕️ Doctor Authentication
+* ✏️ Edit Appointment
+* ❌ Cancel Appointment
+* 🔄 Reschedule Appointment
+* 🔍 Search & Filter
+* 📧 Email Notifications
+* 💳 Payment Gateway Integration
+* 📊 Dashboard Analytics
 
 ---
 
