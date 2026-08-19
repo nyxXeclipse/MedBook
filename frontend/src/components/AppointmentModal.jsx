@@ -83,27 +83,27 @@ const AppointmentModal = ({ isOpen, onClose, onSubmit, initialData = null }) => 
   if (!isOpen) return null;
 
   return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/50 p-4 backdrop-blur-sm" onClick={onClose}>
+      <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl bg-white shadow-2xl" onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true">
         {/* Modal Header */}
-        <div className="modal-header">
-          <div className="modal-title-group">
-            <h2>{isEditing ? 'Edit Appointment' : 'Schedule New Appointment'}</h2>
-            <p className="modal-subtitle">
+        <div className="flex items-start justify-between border-b border-slate-200 px-6 py-5">
+          <div>
+            <h2 className="text-xl font-bold text-slate-900">{isEditing ? 'Edit Appointment' : 'Schedule New Appointment'}</h2>
+            <p className="mt-1 text-sm text-slate-500">
               {isEditing ? `Updating ${initialData.appointment_id}` : 'Fill in patient and consultation details'}
             </p>
           </div>
-          <button className="modal-close-btn" onClick={onClose} aria-label="Close modal">
+          <button className="rounded-lg p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700" onClick={onClose} aria-label="Close modal">
             <X size={20} />
           </button>
         </div>
 
         {/* Modal Form using Formik */}
-        <form onSubmit={formik.handleSubmit} className="modal-form">
-          <div className="form-grid">
+        <form onSubmit={formik.handleSubmit}>
+          <div className="grid gap-4 p-6 sm:grid-cols-2">
             {/* Patient Name */}
-            <div className="form-group col-full">
-              <label htmlFor="patient_name">
+            <div className="sm:col-span-2">
+              <label className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-slate-700" htmlFor="patient_name">
                 <User size={15} /> Patient Full Name <span className="required">*</span>
               </label>
               <input
@@ -114,16 +114,16 @@ const AppointmentModal = ({ isOpen, onClose, onSubmit, initialData = null }) => 
                 value={formik.values.patient_name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className={formik.touched.patient_name && formik.errors.patient_name ? 'input-error' : ''}
+                className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition focus:ring-2 ${formik.touched.patient_name && formik.errors.patient_name ? 'border-red-400 focus:ring-red-100' : 'border-slate-300 focus:border-blue-500 focus:ring-blue-100'}`}
               />
               {formik.touched.patient_name && formik.errors.patient_name && (
-                <span className="error-text">{formik.errors.patient_name}</span>
+                <span className="mt-1 block text-xs text-red-600">{formik.errors.patient_name}</span>
               )}
             </div>
 
             {/* Doctor Selection */}
-            <div className="form-group col-full">
-              <label htmlFor="doctor_name">
+            <div className="sm:col-span-2">
+              <label className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-slate-700" htmlFor="doctor_name">
                 <Stethoscope size={15} /> Select Doctor <span className="required">*</span>
               </label>
               <select
@@ -132,7 +132,7 @@ const AppointmentModal = ({ isOpen, onClose, onSubmit, initialData = null }) => 
                 value={formik.values.doctor_name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className={formik.touched.doctor_name && formik.errors.doctor_name ? 'input-error' : ''}
+                className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition focus:ring-2 ${formik.touched.doctor_name && formik.errors.doctor_name ? 'border-red-400 focus:ring-red-100' : 'border-slate-300 focus:border-blue-500 focus:ring-blue-100'}`}
               >
                 {indianDoctorOptions.map((doc) => (
                   <option key={doc} value={doc}>
@@ -141,13 +141,13 @@ const AppointmentModal = ({ isOpen, onClose, onSubmit, initialData = null }) => 
                 ))}
               </select>
               {formik.touched.doctor_name && formik.errors.doctor_name && (
-                <span className="error-text">{formik.errors.doctor_name}</span>
+                <span className="mt-1 block text-xs text-red-600">{formik.errors.doctor_name}</span>
               )}
             </div>
 
             {/* Appointment Date */}
-            <div className="form-group col-half">
-              <label htmlFor="appointment_date">
+            <div>
+              <label className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-slate-700" htmlFor="appointment_date">
                 <Calendar size={15} /> Appointment Date <span className="required">*</span>
               </label>
               <input
@@ -157,16 +157,16 @@ const AppointmentModal = ({ isOpen, onClose, onSubmit, initialData = null }) => 
                 value={formik.values.appointment_date}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className={formik.touched.appointment_date && formik.errors.appointment_date ? 'input-error' : ''}
+                className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition focus:ring-2 ${formik.touched.appointment_date && formik.errors.appointment_date ? 'border-red-400 focus:ring-red-100' : 'border-slate-300 focus:border-blue-500 focus:ring-blue-100'}`}
               />
               {formik.touched.appointment_date && formik.errors.appointment_date && (
-                <span className="error-text">{formik.errors.appointment_date}</span>
+                <span className="mt-1 block text-xs text-red-600">{formik.errors.appointment_date}</span>
               )}
             </div>
 
             {/* Time Slot */}
-            <div className="form-group col-half">
-              <label htmlFor="appointment_time">
+            <div>
+              <label className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-slate-700" htmlFor="appointment_time">
                 <Clock size={15} /> Time Slot <span className="required">*</span>
               </label>
               <select
@@ -175,7 +175,7 @@ const AppointmentModal = ({ isOpen, onClose, onSubmit, initialData = null }) => 
                 value={formik.values.appointment_time}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className={formik.touched.appointment_time && formik.errors.appointment_time ? 'input-error' : ''}
+                className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition focus:ring-2 ${formik.touched.appointment_time && formik.errors.appointment_time ? 'border-red-400 focus:ring-red-100' : 'border-slate-300 focus:border-blue-500 focus:ring-blue-100'}`}
               >
                 {timeSlots.map((time) => (
                   <option key={time} value={time}>
@@ -184,13 +184,13 @@ const AppointmentModal = ({ isOpen, onClose, onSubmit, initialData = null }) => 
                 ))}
               </select>
               {formik.touched.appointment_time && formik.errors.appointment_time && (
-                <span className="error-text">{formik.errors.appointment_time}</span>
+                <span className="mt-1 block text-xs text-red-600">{formik.errors.appointment_time}</span>
               )}
             </div>
 
             {/* Consultation Fee */}
-            <div className="form-group col-half">
-              <label htmlFor="fee">
+            <div>
+              <label className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-slate-700" htmlFor="fee">
                 <DollarSign size={15} /> Consultation Fee <span className="required">*</span>
               </label>
               <input
@@ -203,17 +203,17 @@ const AppointmentModal = ({ isOpen, onClose, onSubmit, initialData = null }) => 
                 value={formik.values.fee}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className={formik.touched.fee && formik.errors.fee ? 'input-error' : ''}
+                className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition focus:ring-2 ${formik.touched.fee && formik.errors.fee ? 'border-red-400 focus:ring-red-100' : 'border-slate-300 focus:border-blue-500 focus:ring-blue-100'}`}
               />
               {formik.touched.fee && formik.errors.fee && (
-                <span className="error-text">{formik.errors.fee}</span>
+                <span className="mt-1 block text-xs text-red-600">{formik.errors.fee}</span>
               )}
             </div>
 
             {/* Status Choice */}
-            <div className="form-group col-half">
-              <label htmlFor="status">Appointment Status</label>
-              <select
+            <div>
+              <label className="mb-1.5 block text-sm font-medium text-slate-700" htmlFor="status">Appointment Status</label>
+              <select className="w-full rounded-lg border border-slate-300 px-3 py-2.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                 id="status"
                 name="status"
                 value={formik.values.status}
@@ -227,8 +227,8 @@ const AppointmentModal = ({ isOpen, onClose, onSubmit, initialData = null }) => 
             </div>
 
             {/* Reason */}
-            <div className="form-group col-full">
-              <label htmlFor="reason">
+            <div className="sm:col-span-2">
+              <label className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-slate-700" htmlFor="reason">
                 <FileText size={15} /> Reason for Visit (Optional)
               </label>
               <textarea
@@ -239,19 +239,19 @@ const AppointmentModal = ({ isOpen, onClose, onSubmit, initialData = null }) => 
                 value={formik.values.reason}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className={formik.touched.reason && formik.errors.reason ? 'input-error' : ''}
+                className={`w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition focus:ring-2 ${formik.touched.reason && formik.errors.reason ? 'border-red-400 focus:ring-red-100' : 'border-slate-300 focus:border-blue-500 focus:ring-blue-100'}`}
               ></textarea>
               {formik.touched.reason && formik.errors.reason && (
-                <span className="error-text">{formik.errors.reason}</span>
+                <span className="mt-1 block text-xs text-red-600">{formik.errors.reason}</span>
               )}
             </div>
           </div>
 
           {/* Modal Actions */}
-          <div className="modal-footer">
+          <div className="flex justify-end gap-3 border-t border-slate-200 px-6 py-4">
             <button
               type="button"
-              className="btn btn-secondary"
+              className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50"
               onClick={onClose}
               disabled={formik.isSubmitting}
             >
@@ -259,7 +259,7 @@ const AppointmentModal = ({ isOpen, onClose, onSubmit, initialData = null }) => 
             </button>
             <button
               type="submit"
-              className="btn btn-primary"
+              className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
               disabled={formik.isSubmitting}
             >
               {formik.isSubmitting ? 'Saving...' : isEditing ? 'Update Appointment' : 'Confirm Appointment'}

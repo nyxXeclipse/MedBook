@@ -32,7 +32,7 @@ const CSVExport = ({ data }) => {
   };
 
   return (
-    <button className="btn btn-outline" onClick={exportToCSV} disabled={!data || data.length === 0} title="Export appointments list to CSV">
+    <button className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50" onClick={exportToCSV} disabled={!data || data.length === 0} title="Export appointments list to CSV">
       <Download size={16} />
       <span>Export CSV</span>
     </button>

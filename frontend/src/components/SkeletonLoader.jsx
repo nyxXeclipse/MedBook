@@ -2,16 +2,10 @@ import React from 'react';
 
 const SkeletonLoader = ({ rows = 5 }) => {
   return (
-    <div className="skeleton-container">
+    <div className="space-y-3 p-5" aria-label="Loading appointments">
       {Array.from({ length: rows }).map((_, index) => (
-        <div key={index} className="skeleton-row">
-          <div className="skeleton-cell skeleton-name"></div>
-          <div className="skeleton-cell skeleton-doctor"></div>
-          <div className="skeleton-cell skeleton-date"></div>
-          <div className="skeleton-cell skeleton-badge"></div>
-          <div className="skeleton-cell skeleton-fee"></div>
-          <div className="skeleton-cell skeleton-status"></div>
-          <div className="skeleton-cell skeleton-actions"></div>
+        <div key={index} className="grid animate-pulse grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
+          {Array.from({ length: 7 }).map((_, cell) => <div key={cell} className="h-8 rounded bg-slate-200"></div>)}
         </div>
       ))}
     </div>

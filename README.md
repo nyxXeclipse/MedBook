@@ -130,7 +130,7 @@ npm install
 Create a `.env` file inside the **backend** folder and add:
 
 ```env
-MONGO_URI=your_mongodb_atlas_connection_string
+MONGODB_URI=your_mongodb_atlas_connection_string
 PORT=5000
 ```
 

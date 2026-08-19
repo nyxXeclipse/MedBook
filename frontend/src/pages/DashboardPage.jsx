@@ -25,21 +25,21 @@ const DashboardPage = ({ onOpenCreateModal, onEditAppointment, onDeleteAppointme
   } = useAppointments();
 
   return (
-    <div className="dashboard-page">
+    <div className="space-y-8">
       {/* Welcome Banner */}
-      <div className="page-header">
+      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
         <div>
-          <h1 className="page-title">Dashboard Overview</h1>
-          <p className="page-subtitle">Track, schedule, and manage patient appointments efficiently.</p>
+          <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Dashboard Overview</h1>
+          <p className="mt-1 text-sm text-slate-500">Track, schedule, and manage patient appointments efficiently.</p>
         </div>
-        <button className="btn btn-primary btn-lg" onClick={onOpenCreateModal}>
+        <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700" onClick={onOpenCreateModal}>
           <Plus size={18} />
           <span>New Appointment</span>
         </button>
       </div>
 
       {/* KPI Statistic Cards Grid */}
-      <div className="stats-grid">
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         <StatCard
           title="Total Appointments"
           value={stats.total}
@@ -85,8 +85,8 @@ const DashboardPage = ({ onOpenCreateModal, onEditAppointment, onDeleteAppointme
       </div>
 
       {/* Main Appointment Table Section */}
-      <div className="section-header">
-        <h2>Recent & Managed Appointments</h2>
+      <div>
+        <h2 className="text-lg font-semibold text-slate-900">Recent & Managed Appointments</h2>
       </div>
 
       <AppointmentTable

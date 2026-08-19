@@ -53,7 +53,7 @@ const AppContent = () => {
   };
 
   return (
-    <div className="app-container">
+    <div className="min-h-screen bg-slate-50 font-[Inter,sans-serif] text-slate-800">
       {/* React Hot Toast Provider Container */}
       <Toaster
         position="top-right"
@@ -92,7 +92,7 @@ const AppContent = () => {
 
       <Navbar onOpenCreateModal={handleOpenCreate} />
 
-      <main className="main-content">
+      <main className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <Routes>
           <Route
             path="/"
@@ -118,8 +118,8 @@ const AppContent = () => {
       </main>
 
       {/* Clean Footer */}
-      <footer className="app-footer">
-        <div className="footer-container">
+      <footer className="mt-8 border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-6 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
           <p>© {new Date().getFullYear()} MedBook Appointment Booking System. All rights reserved.</p>
         </div>
       </footer>
